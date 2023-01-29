@@ -1,0 +1,2762 @@
+@charset "UTF-8";
+@-webkit-keyframes slideme {
+  0% {
+    left: -30px;
+    margin-left: 0;
+  }
+  30% {
+    left: 110%;
+    margin-left: 80px;
+  }
+  100% {
+    left: 110%;
+    margin-left: 80px;
+  }
+}
+@keyframes slideme {
+  0% {
+    left: -30px;
+    margin-left: 0;
+  }
+  30% {
+    left: 110%;
+    margin-left: 80px;
+  }
+  100% {
+    left: 110%;
+    margin-left: 80px;
+  }
+}
+#imagelightbox {
+  position: fixed;
+  z-index: 9999;
+  -ms-touch-action: none;
+  touch-action: none;
+}
+
+@media only screen and (max-width: 1250px) {
+  body footer .footer_content, body footer, body main .block9, body main .block8, body main .block7, body main .block5, body main .block4 .block4_content, body main .block3, body main .block2 .block2_content, body main .block1, body header .header_content {
+    padding-right: 3%;
+    padding-left: 3%;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  body footer .footer_content, body footer, body main .block9, body main .block8, body main .block7, body main .block5, body main .block4 .block4_content, body main .block3, body main .block2 .block2_content, body main .block1, body header .header_content {
+    padding-right: 2.5%;
+    padding-left: 2.5%;
+  }
+}
+@media only screen and (max-width: 980px) {
+  body footer .footer_content, body footer, body main .block9, body main .block8, body main .block7, body main .block5, body main .block4 .block4_content, body main .block3, body main .block2 .block2_content, body main .block1, body header .header_content {
+    padding-right: 2%;
+    padding-left: 2%;
+  }
+}
+@media only screen and (max-width: 750px) {
+  body footer .footer_content, body footer, body main .block9, body main .block8, body main .block7, body main .block5, body main .block4 .block4_content, body main .block3, body main .block2 .block2_content, body main .block1, body header .header_content {
+    width: 100%;
+    padding-right: 2%;
+    padding-left: 2%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  body footer .footer_content, body footer, body main .block9, body main .block8, body main .block7, body main .block5, body main .block4 .block4_content, body main .block3, body main .block2 .block2_content, body main .block1, body header .header_content {
+    max-width: auto;
+    padding-right: 2%;
+    padding-left: 2%;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  /* свойство scroll-behavior не наследуется, применяется к прокручиваемым блокам */
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-family: Gilroy;
+}
+
+a:active,
+a:focus {
+  outline: none;
+}
+
+input,
+textarea {
+  outline: none;
+  font-family: Gilroy;
+}
+
+input:active,
+textarea:active {
+  outline: none;
+  font-family: Gilroy;
+}
+
+:focus {
+  outline: none;
+}
+
+textarea {
+  resize: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+textarea {
+  resize: horizontal;
+}
+
+input::focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+input::focus::-moz-placeholder {
+  color: transparent;
+}
+
+input::focus:-ms-input-placeholder {
+  color: transparent;
+}
+
+input::focus::-ms-input-placeholder {
+  color: transparent;
+}
+
+input::focus::placeholder {
+  color: transparent;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  z-index: 20;
+}
+
+.page::-webkit-scrollbar {
+  width: 6px;
+  height: 85px;
+  background-color: transparent;
+}
+
+.page::-webkit-scrollbar-thumb {
+  background-color: #0E2FB7;
+}
+
+body {
+  color: black;
+  font-family: Gilroy;
+  background-color: white;
+  font-style: normal;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+body header {
+  position: relative;
+  z-index: 60;
+  background-image: url("../img/header/header_fon.png");
+  background-size: cover;
+  background-position: left;
+}
+@media only screen and (max-width: 1150px) {
+  body header {
+    background-position-x: 30%;
+    background-size: inherit;
+  }
+}
+@media only screen and (max-width: 800px) {
+  body header {
+    background-position-x: 60%;
+  }
+}
+body header::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 80%;
+  background: -webkit-gradient(linear, left top, right top, color-stop(32.36%, #0E2FB7), to(rgba(14, 47, 183, 0)));
+  background: linear-gradient(90deg, #0E2FB7 32.36%, rgba(14, 47, 183, 0) 100%);
+  content: "";
+  z-index: 10;
+}
+@media only screen and (max-width: 800px) {
+  body header::before {
+    width: 100%;
+  }
+}
+body header .header_content {
+  max-width: 1145px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 33px;
+}
+body header .header_content .header_content_top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  place-items: center;
+}
+@media only screen and (max-width: 500px) {
+  body header .header_content .header_content_top .header_content_logo {
+    height: 35px;
+  }
+}
+body header .header_content .header_content_top .header_content_logo img {
+  height: 100%;
+}
+@media only screen and (max-width: 360px) {
+  body header .header_content .header_content_top .header_content_logo {
+    height: 32px;
+  }
+}
+body header .header_content .header_content_top .header_content_phone {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  place-items: center;
+  place-content: center;
+}
+body header .header_content .header_content_top .header_content_phone a {
+  margin-left: 6px;
+  font-weight: 700;
+  font-size: 24px;
+  color: white;
+}
+@media only screen and (min-width: 1440px) {
+  body header .header_content .header_content_top .header_content_phone a {
+    font-size: 24px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  body header .header_content .header_content_top .header_content_phone a {
+    font-size: calc(16px + 8 * ((100vw - 320px) / 1120));
+  }
+}
+body header .header_content .header_content_center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+}
+body header .header_content .header_content_center .header_content_center_top p {
+  color: white;
+}
+body header .header_content .header_content_center .header_content_center_top p:nth-of-type(1) {
+  font-size: 60px;
+  font-weight: 800;
+  text-align: left;
+  margin-top: 147px;
+  line-height: 110%;
+}
+@media only screen and (min-width: 1440px) {
+  body header .header_content .header_content_center .header_content_center_top p:nth-of-type(1) {
+    font-size: 60px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  body header .header_content .header_content_center .header_content_center_top p:nth-of-type(1) {
+    font-size: calc(34px + 26 * ((100vw - 320px) / 1120));
+  }
+}
+@media only screen and (max-width: 600px) {
+  body header .header_content .header_content_center .header_content_center_top p:nth-of-type(1) {
+    margin-top: 100px;
+  }
+}
+body header .header_content .header_content_center .header_content_center_top p:nth-of-type(2) {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 34px;
+  max-width: 374px;
+  margin-top: 16px;
+}
+@media only screen and (min-width: 1440px) {
+  body header .header_content .header_content_center .header_content_center_top p:nth-of-type(2) {
+    font-size: 24px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  body header .header_content .header_content_center .header_content_center_top p:nth-of-type(2) {
+    font-size: calc(18px + 6 * ((100vw - 320px) / 1120));
+  }
+}
+body header .header_content .header_content_center .header_content_center_top a {
+  margin-top: 32px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: uppercase;
+  padding: 12px 36px;
+  background: #FD622A;
+  border-radius: 8px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+body header .header_content .header_content_center .header_content_center_top a:hover {
+  -webkit-box-shadow: 0px 7px 15px #fd622a;
+          box-shadow: 0px 7px 15px #fd622a;
+}
+body header .header_content .header_content_center .header_content_center_bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  place-items: center;
+  margin-top: 95px;
+  margin-bottom: 150px;
+}
+@media only screen and (max-width: 900px) {
+  body header .header_content .header_content_center .header_content_center_bottom {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    margin-top: 65px;
+    margin-bottom: 75px;
+  }
+}
+body header .header_content .header_content_center .header_content_center_bottom .header_content_center_bottom_left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+@media only screen and (max-width: 900px) {
+  body header .header_content .header_content_center .header_content_center_bottom .header_content_center_bottom_left {
+    margin-bottom: 20px;
+  }
+}
+body header .header_content .header_content_center .header_content_center_bottom .header_content_center_bottom_left .header_content_center_bottom_left_item:nth-of-type(2) {
+  margin-left: 80px;
+}
+body header .header_content .header_content_center .header_content_center_bottom .header_content_center_bottom_left .header_content_center_bottom_left_item p {
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  place-content: center;
+  place-items: center;
+}
+body header .header_content .header_content_center .header_content_center_bottom .header_content_center_bottom_left .header_content_center_bottom_left_item p:nth-of-type(1) {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 34px;
+  margin-bottom: 12px;
+}
+@media only screen and (min-width: 1440px) {
+  body header .header_content .header_content_center .header_content_center_bottom .header_content_center_bottom_left .header_content_center_bottom_left_item p:nth-of-type(1) {
+    font-size: 48px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  body header .header_content .header_content_center .header_content_center_bottom .header_content_center_bottom_left .header_content_center_bottom_left_item p:nth-of-type(1) {
+    font-size: calc(30px + 18 * ((100vw - 320px) / 1120));
+  }
+}
+body header .header_content .header_content_center .header_content_center_bottom .header_content_center_bottom_left .header_content_center_bottom_left_item p:nth-of-type(2) {
+  font-size: 20px;
+  line-height: 20px;
+}
+body header .header_content .header_content_center .header_content_center_bottom .header_content_center_bottom_right {
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 30px 42px;
+  border-radius: 16px;
+  place-content: center;
+  place-items: center;
+}
+@media only screen and (max-width: 480px) {
+  body header .header_content .header_content_center .header_content_center_bottom .header_content_center_bottom_right {
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media only screen and (max-width: 430px) {
+  body header .header_content .header_content_center .header_content_center_bottom .header_content_center_bottom_right {
+    padding: 30px 15px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+@media only screen and (max-width: 430px) {
+  body header .header_content .header_content_center .header_content_center_bottom .header_content_center_bottom_right img:nth-of-type(1) {
+    width: 100px;
+  }
+}
+@media only screen and (max-width: 350px) {
+  body header .header_content .header_content_center .header_content_center_bottom .header_content_center_bottom_right img:nth-of-type(1) {
+    width: 90px;
+  }
+}
+body header .header_content .header_content_center .header_content_center_bottom .header_content_center_bottom_right img:nth-of-type(2) {
+  margin: 0px 46px;
+}
+@media only screen and (max-width: 430px) {
+  body header .header_content .header_content_center .header_content_center_bottom .header_content_center_bottom_right img:nth-of-type(2) {
+    margin: 0px 20px;
+  }
+}
+@media only screen and (max-width: 350px) {
+  body header .header_content .header_content_center .header_content_center_bottom .header_content_center_bottom_right img:nth-of-type(2) {
+    margin: 0px 15px;
+  }
+}
+@media only screen and (max-width: 430px) {
+  body header .header_content .header_content_center .header_content_center_bottom .header_content_center_bottom_right img:nth-of-type(3) {
+    width: 100px;
+  }
+}
+@media only screen and (max-width: 350px) {
+  body header .header_content .header_content_center .header_content_center_bottom .header_content_center_bottom_right img:nth-of-type(3) {
+    width: 90px;
+  }
+}
+body main .block1 {
+  max-width: 1145px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media only screen and (min-width: 1440px) {
+  body main .block1 {
+    margin-top: 160px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  body main .block1 {
+    margin-top: calc(60px + 100 * ((100vw - 320px) / 1120));
+  }
+}
+@media only screen and (min-width: 1440px) {
+  body main .block1 {
+    margin-bottom: 160px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  body main .block1 {
+    margin-bottom: calc(60px + 100 * ((100vw - 320px) / 1120));
+  }
+}
+body main .block1 .block1_tittle {
+  font-weight: 700;
+  font-size: 46px;
+  line-height: 130%;
+  text-align: center;
+  color: #010325;
+  margin-bottom: 50px;
+}
+@media only screen and (min-width: 1440px) {
+  body main .block1 .block1_tittle {
+    font-size: 46px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  body main .block1 .block1_tittle {
+    font-size: calc(20px + 26 * ((100vw - 320px) / 1120));
+  }
+}
+@media only screen and (max-width: 600px) {
+  body main .block1 .block1_tittle {
+    margin-bottom: 30px;
+  }
+}
+body main .block1 .block1_tittle span {
+  font-weight: 800;
+  color: #FD622A;
+}
+body main .block1 .block1_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+@media only screen and (max-width: 840px) {
+  body main .block1 .block1_content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+  }
+}
+body main .block1 .block1_content .block1_content_left {
+  width: 42%;
+}
+@media only screen and (max-width: 840px) {
+  body main .block1 .block1_content .block1_content_left {
+    width: 100%;
+    text-align: center;
+  }
+}
+body main .block1 .block1_content .block1_content_left img {
+  width: 100%;
+}
+@media only screen and (max-width: 840px) {
+  body main .block1 .block1_content .block1_content_left img {
+    max-width: 400px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+body main .block1 .block1_content .block1_content_right {
+  width: 46.6%;
+}
+@media only screen and (max-width: 1100px) {
+  body main .block1 .block1_content .block1_content_right {
+    width: 55%;
+  }
+}
+@media only screen and (max-width: 840px) {
+  body main .block1 .block1_content .block1_content_right {
+    margin-top: 20px;
+    width: 100%;
+  }
+}
+body main .block1 .block1_content .block1_content_right .block1_content_right_tittle {
+  font-weight: 700;
+  line-height: 120%;
+  color: #010325;
+}
+@media only screen and (min-width: 1440px) {
+  body main .block1 .block1_content .block1_content_right .block1_content_right_tittle {
+    font-size: 40px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  body main .block1 .block1_content .block1_content_right .block1_content_right_tittle {
+    font-size: calc(18px + 22 * ((100vw - 320px) / 1120));
+  }
+}
+@media only screen and (max-width: 840px) {
+  body main .block1 .block1_content .block1_content_right .block1_content_right_tittle {
+    text-align: center;
+  }
+}
+body main .block1 .block1_content .block1_content_right .block1_content_right_content {
+  margin-top: 35px;
+}
+@media only screen and (max-width: 840px) {
+  body main .block1 .block1_content .block1_content_right .block1_content_right_content {
+    margin-top: 15px;
+    max-width: 440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+body main .block1 .block1_content .block1_content_right .block1_content_right_content .block1_content_right_content_tittle {
+  font-family: Gilroy;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 32px;
+  color: #010325;
+}
+@media only screen and (min-width: 1440px) {
+  body main .block1 .block1_content .block1_content_right .block1_content_right_content .block1_content_right_content_tittle {
+    font-size: 32px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  body main .block1 .block1_content .block1_content_right .block1_content_right_content .block1_content_right_content_tittle {
+    font-size: calc(18px + 14 * ((100vw - 320px) / 1120));
+  }
+}
+body main .block1 .block1_content .block1_content_right .block1_content_right_content .block1_content_right_content_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  place-items: center;
+}
+body main .block1 .block1_content .block1_content_right .block1_content_right_content .block1_content_right_content_item div {
+  width: 8px;
+  height: 8px;
+  background: #3F4054;
+  border-radius: 100px;
+  margin-right: 10px;
+}
+body main .block1 .block1_content .block1_content_right .block1_content_right_content .block1_content_right_content_item p {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 180%;
+  color: #3F4054;
+}
+@media only screen and (min-width: 1440px) {
+  body main .block1 .block1_content .block1_content_right .block1_content_right_content .block1_content_right_content_item p {
+    font-size: 24px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  body main .block1 .block1_content .block1_content_right .block1_content_right_content .block1_content_right_content_item p {
+    font-size: calc(16px + 8 * ((100vw - 320px) / 1120));
+  }
+}
+body main .block1 .block1_content .block1_content_right .block1_content_right_content .block1_content_right_content_item p span {
+  font-weight: 700;
+  color: #FD622A;
+}
+body main .block2 {
+  background-color: #0F30B8;
+  position: relative;
+  padding: 96px 0px;
+}
+@media only screen and (min-width: 1440px) {
+  body main .block2 {
+    padding-top: 96px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  body main .block2 {
+    padding-top: calc(30px + 66 * ((100vw - 320px) / 1120));
+  }
+}
+@media only screen and (min-width: 1440px) {
+  body main .block2 {
+    padding-bottom: 96px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  body main .block2 {
+    padding-bottom: calc(30px + 66 * ((100vw - 320px) / 1120));
+  }
+}
+body main .block2 .block2_content {
+  max-width: 1145px;
+  margin-left: auto;
+  margin-right: auto;
+}
+body main .block2 .block2_content .block2_content_tittle {
+  font-family: Gilroy;
+  z-index: 15;
+  position: relative;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 130%;
+  text-align: center;
+  max-width: 804px;
+  color: #FFFFFF;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media only screen and (min-width: 1440px) {
+  body main .block2 .block2_content .block2_content_tittle {
+    font-size: 36px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  body main .block2 .block2_content .block2_content_tittle {
+    font-size: calc(20px + 16 * ((100vw - 320px) / 1120));
+  }
+}
+body main .block2 .block2_content form {
+  margin-top: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media only screen and (min-width: 1440px) {
+  body main .block2 .block2_content form {
+    margin-top: 60px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  body main .block2 .block2_content form {
+    margin-top: calc(30px + 30 * ((100vw - 320px) / 1120));
+  }
+}
+@media only screen and (max-width: 720px) {
+  body main .block2 .block2_content form {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    place-items: center;
+  }
+}
+body main .block2 .block2_content form input {
+  width: 33.3%;
+  font-size: 20px;
+  line-height: 24px;
+  background: #FFFFFF;
+  border: 1px solid #ECECEC;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 8px;
+  padding: 20px;
+}
+body main .block2 .block2_content form input::-webkit-input-placeholder {
+  color: #B9B9B9;
+}
+body main .block2 .block2_content form input::-moz-placeholder {
+  color: #B9B9B9;
+}
+body main .block2 .block2_content form input:-ms-input-placeholder {
+  color: #B9B9B9;
+}
+body main .block2 .block2_content form input::-ms-input-placeholder {
+  color: #B9B9B9;
+}
+body main .block2 .block2_content form input::placeholder {
+  color: #B9B9B9;
+}
+@media only screen and (max-width: 850px) {
+  body main .block2 .block2_content form input {
+    width: 35%;
+  }
+}
+@media only screen and (max-width: 720px) {
+  body main .block2 .block2_content form input {
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 500px) {
+  body main .block2 .block2_content form input {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 720px) {
+  body main .block2 .block2_content form input:nth-of-type(2) {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+}
+body main .block2 .block2_content form button {
+  cursor: pointer;
+  width: 25%;
+  background: #FD622A;
+  border-radius: 8px;
+  color: white;
+  border: 0px;
+  font-size: 20px;
+  line-height: 40px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-weight: 700;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+@media only screen and (max-width: 850px) {
+  body main .block2 .block2_content form button {
+    width: 28%;
+  }
+}
+@media only screen and (max-width: 720px) {
+  body main .block2 .block2_content form button {
+    width: 90%;
+    min-height: 57px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  body main .block2 .block2_content form button {
+    width: 100%;
+  }
+}
+body main .block2 .block2_content form button:hover {
+  -webkit-box-shadow: 0px 7px 15px #fd622a;
+          box-shadow: 0px 7px 15px #fd622a;
+}
+body main .block3 {
+  max-width: 1145px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 160px;
+  margin-bottom: 160px;
+}
+@media only screen and (min-width: 1440px) {
+  body main .block3 {
+    margin-top: 160px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  body main .block3 {
+    margin-top: calc(60px + 100 * ((100vw - 320px) / 1120));
+  }
+}
+@media only screen and (min-width: 1440px) {
+  body main .block3 {
+    margin-bottom: 160px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  body main .block3 {
+    margin-bottom: calc(40px + 120 * ((100vw - 320px) / 1120));
+  }
+}
+body main .block3 .block3_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  place-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+@media only screen and (max-width: 600px) {
+  body main .block3 .block3_item {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-flow: column-reverse;
+            flex-flow: column-reverse;
+  }
+}
+body main .block3 .block3_item:nth-of-type(2) {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-flow: row-reverse;
+          flex-flow: row-reverse;
+  margin-top: 160px;
+}
+@media only screen and (min-width: 1440px) {
+  body main .block3 .block3_item:nth-of-type(2) {
+    margin-top: 160px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  body main .block3 .block3_item:nth-of-type(2) {
+    margin-top: calc(40px + 120 * ((100vw - 320px) / 1120));
+  }
+}
+@media only screen and (max-width: 600px) {
+  body main .block3 .block3_item:nth-of-type(2) {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-flow: column-reverse;
+            flex-flow: column-reverse;
+    margin-top: 20px;
+  }
+}
+body main .block3 .block3_item .block3_item_right {
+  width: 49%;
+}
+@media only screen and (max-width: 600px) {
+  body main .block3 .block3_item .block3_item_right {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+body main .block3 .block3_item .block3_item_right img {
+  width: 100%;
+}
+body main .block3 .block3_item .block3_item_left {
+  width: 44%;
+}
+@media only screen and (max-width: 600px) {
+  body main .block3 .block3_item .block3_item_left {
+    width: 90%;
+  }
+}
+body main .block3 .block3_item .block3_item_left p:nth-of-type(1) {
+  font-weight: bold;
+  font-size: 46px;
+  line-height: 120%;
+  color: #010325;
+  margin-bottom: 12px;
+}
+@media only screen and (min-width: 1440px) {
+  body main .block3 .block3_item .block3_item_left p:nth-of-type(1) {
+    font-size: 46px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  body main .block3 .block3_item .block3_item_left p:nth-of-type(1) {
+    font-size: calc(22px + 24 * ((100vw - 320px) / 1120));
+  }
+}
+@media only screen and (max-width: 600px) {
+  body main .block3 .block3_item .block3_item_left p:nth-of-type(1) {
+    margin-top: 20px;
+  }
+}
+body main .block3 .block3_item .block3_item_left p:nth-of-type(2) {
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 120%;
+  color: #010325;
+  margin-bottom: 20px;
+}
+@media only screen and (min-width: 1440px) {
+  body main .block3 .block3_item .block3_item_left p:nth-of-type(2) {
+    font-size: 32px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  body main .block3 .block3_item .block3_item_left p:nth-of-type(2) {
+    font-size: calc(18px + 14 * ((100vw - 320px) / 1120));
+  }
+}
+@media only screen and (max-width: 600px) {
+  body main .block3 .block3_item .block3_item_left p:nth-of-type(2) {
+    margin-bottom: 10px;
+  }
+}
+body main .block3 .block3_item .block3_item_left p:nth-of-type(3) {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 160%;
+  color: #3F4054;
+}
+@media only screen and (min-width: 1440px) {
+  body main .block3 .block3_item .block3_item_left p:nth-of-type(3) {
+    font-size: 24px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  body main .block3 .block3_item .block3_item_left p:nth-of-type(3) {
+    font-size: calc(16px + 8 * ((100vw - 320px) / 1120));
+  }
+}
+body main .block4 {
+  background: #F7FAFF;
+  padding: 120px 0px;
+}
+@media only screen and (min-width: 1440px) {
+  body main .block4 {
+    padding-top: 120px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  body main .block4 {
+    padding-top: calc(50px + 70 * ((100vw - 320px) / 1120));
+  }
+}
+@media only screen and (min-width: 1440px) {
+  body main .block4 {
+    padding-bottom: 120px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  body main .block4 {
+    padding-bottom: calc(50px + 70 * ((100vw - 320px) / 1120));
+  }
+}
+body main .block4 .block4_content {
+  max-width: 1145px;
+  margin-left: auto;
+  margin-right: auto;
+}
+body main .block4 .block4_content .block4_content_tittle {
+  font-weight: bold;
+  font-size: 46px;
+  line-height: 120%;
+  color: #010325;
+  text-align: center;
+}
+@media only screen and (min-width: 1440px) {
+  body main .block4 .block4_content .block4_content_tittle {
+    font-size: 46px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  body main .block4 .block4_content .block4_content_tittle {
+    font-size: calc(22px + 24 * ((100vw - 320px) / 1120));
+  }
+}
+body main .block4 .block4_content .block4_content_item {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 60px 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-row-gap: 60px;
+  margin-top: 60px;
+  place-items: center;
+}
+body main .block4 .block4_content .block4_content_item > *:nth-child(1) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+}
+body main .block4 .block4_content .block4_content_item > *:nth-child(2) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+}
+body main .block4 .block4_content .block4_content_item > *:nth-child(3) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+}
+body main .block4 .block4_content .block4_content_item > *:nth-child(4) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+}
+body main .block4 .block4_content .block4_content_item > *:nth-child(5) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+}
+body main .block4 .block4_content .block4_content_item > *:nth-child(6) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+}
+@media only screen and (max-width: 750px) {
+  body main .block4 .block4_content .block4_content_item {
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 30px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  body main .block4 .block4_content .block4_content_item {
+    grid-column-gap: 20px;
+  }
+}
+body main .block4 .block4_content .block4_content_item .block4_content_item_card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  place-items: center;
+  -ms-grid-row-align: normal;
+  -ms-grid-column-align: normal;
+  place-self: normal;
+}
+body main .block4 .block4_content .block4_content_item .block4_content_item_card:nth-of-type(1) div img {
+  margin-left: 10px;
+}
+body main .block4 .block4_content .block4_content_item .block4_content_item_card div {
+  background: #0F30B8;
+  width: 120px;
+  height: 120px;
+  border-radius: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  place-content: center;
+  place-items: center;
+}
+@media only screen and (max-width: 500px) {
+  body main .block4 .block4_content .block4_content_item .block4_content_item_card div {
+    width: 100px;
+    height: 100px;
+  }
+}
+body main .block4 .block4_content .block4_content_item .block4_content_item_card p {
+  margin-top: 30px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 120%;
+  text-align: center;
+  color: #010325;
+}
+@media only screen and (min-width: 1440px) {
+  body main .block4 .block4_content .block4_content_item .block4_content_item_card p {
+    font-size: 24px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  body main .block4 .block4_content .block4_content_item .block4_content_item_card p {
+    font-size: calc(17px + 7 * ((100vw - 320px) / 1120));
+  }
+}
+body main .block4 .block4_content a {
+  margin-top: 48px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: uppercase;
+  padding: 12px 36px;
+  background: #FD622A;
+  border-radius: 8px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 40px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+body main .block4 .block4_content a:hover {
+  -webkit-box-shadow: 0px 7px 15px #fd622a;
+          box-shadow: 0px 7px 15px #fd622a;
+}
+body main .block5 {
+  max-width: 1145px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 160px;
+  margin-bottom: 160px;
+}
+@media only screen and (min-width: 1440px) {
+  body main .block5 {
+    margin-top: 160px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  body main .block5 {
+    margin-top: calc(40px + 120 * ((100vw - 320px) / 1120));
+  }
+}
+@media only screen and (min-width: 1440px) {
+  body main .block5 {
+    margin-bottom: 160px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  body main .block5 {
+    margin-bottom: calc(60px + 100 * ((100vw - 320px) / 1120));
+  }
+}
+body main .block5 .block5_tittle {
+  text-align: center;
+  font-weight: bold;
+  font-size: 46px;
+  line-height: 120%;
+  color: #010325;
+}
+@media only screen and (min-width: 1440px) {
+  body main .block5 .block5_tittle {
+    font-size: 46px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  body main .block5 .block5_tittle {
+    font-size: calc(22px + 24 * ((100vw - 320px) / 1120));
+  }
+}
+body main .block5 .block5_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 60px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+@media only screen and (min-width: 1440px) {
+  body main .block5 .block5_content {
+    margin-top: 60px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  body main .block5 .block5_content {
+    margin-top: calc(30px + 30 * ((100vw - 320px) / 1120));
+  }
+}
+@media only screen and (max-width: 700px) {
+  body main .block5 .block5_content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+  }
+}
+body main .block5 .block5_content .block5_content_item {
+  width: 30.5%;
+  position: relative;
+}
+@media only screen and (max-width: 700px) {
+  body main .block5 .block5_content .block5_content_item {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+body main .block5 .block5_content .block5_content_item img {
+  width: 100%;
+}
+body main .block5 .block5_content .block5_content_item a {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
+  width: 80px;
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  background-color: #FD622A;
+  border-radius: 100px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+body main .block5 .block5_content .block5_content_item a:hover {
+  -webkit-box-shadow: 0px 7px 15px #fd622a;
+          box-shadow: 0px 7px 15px #fd622a;
+}
+@media only screen and (max-width: 600px) {
+  body main .block5 .block5_content .block5_content_item a {
+    width: 60px;
+    height: 60px;
+  }
+}
+body main .block5 .block5_content .block5_content_item a img {
+  width: 32px;
+  height: 32px;
+}
+@media only screen and (max-width: 600px) {
+  body main .block5 .block5_content .block5_content_item a img {
+    width: 26px;
+    height: 26px;
+  }
+}
+body main .block6_fon {
+  background: #F6FAFF;
+}
+body main .block6_fon .block6 {
+  max-width: 1145px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+@media only screen and (min-width: 1440px) {
+  body main .block6_fon .block6 {
+    padding-bottom: 120px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  body main .block6_fon .block6 {
+    padding-bottom: calc(50px + 70 * ((100vw - 320px) / 1120));
+  }
+}
+@media only screen and (min-width: 1440px) {
+  body main .block6_fon .block6 {
+    padding-top: 120px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  body main .block6_fon .block6 {
+    padding-top: calc(50px + 70 * ((100vw - 320px) / 1120));
+  }
+}
+body main .block6_fon .block6 .block6_tittle {
+  text-align: center;
+  font-weight: bold;
+  font-size: 46px;
+  line-height: 120%;
+  color: #010325;
+  margin-bottom: 60px;
+}
+@media only screen and (min-width: 1440px) {
+  body main .block6_fon .block6 .block6_tittle {
+    font-size: 46px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  body main .block6_fon .block6 .block6_tittle {
+    font-size: calc(22px + 24 * ((100vw - 320px) / 1120));
+  }
+}
+@media only screen and (min-width: 1440px) {
+  body main .block6_fon .block6 .block6_tittle {
+    margin-bottom: 60px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  body main .block6_fon .block6 .block6_tittle {
+    margin-bottom: calc(30px + 30 * ((100vw - 320px) / 1120));
+  }
+}
+body main .block6_fon .block6 .slider_content .slider_profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  place-items: center;
+}
+body main .block6_fon .block6 .slider_content .slider_profile .slider_profile_img {
+  width: 80px;
+  height: 80px;
+}
+body main .block6_fon .block6 .slider_content .slider_profile .slider_profile_name {
+  margin-left: 16px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  color: #010325;
+  text-align: left;
+}
+@media only screen and (min-width: 1440px) {
+  body main .block6_fon .block6 .slider_content .slider_profile .slider_profile_name {
+    font-size: 24px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  body main .block6_fon .block6 .slider_content .slider_profile .slider_profile_name {
+    font-size: calc(20px + 4 * ((100vw - 320px) / 1120));
+  }
+}
+body main .block6_fon .block6 .slider_content .slider_info {
+  margin-top: 20px;
+  font-family: Gilroy;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 160%;
+  /* or 32px */
+  text-align: left;
+  color: #3F4054;
+}
+@media only screen and (min-width: 1440px) {
+  body main .block6_fon .block6 .slider_content .slider_info {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  body main .block6_fon .block6 .slider_content .slider_info {
+    font-size: calc(16px + 4 * ((100vw - 320px) / 1120));
+  }
+}
+body main .block7 {
+  max-width: 1145px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 160px;
+}
+@media only screen and (min-width: 1440px) {
+  body main .block7 {
+    margin-top: 100px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  body main .block7 {
+    margin-top: calc(50px + 50 * ((100vw - 320px) / 1120));
+  }
+}
+body main .block7 .block7_tittle {
+  text-align: center;
+  font-weight: bold;
+  font-size: 46px;
+  line-height: 120%;
+  color: #010325;
+  margin-bottom: 60px;
+}
+@media only screen and (min-width: 1440px) {
+  body main .block7 .block7_tittle {
+    font-size: 46px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  body main .block7 .block7_tittle {
+    font-size: calc(22px + 24 * ((100vw - 320px) / 1120));
+  }
+}
+@media only screen and (min-width: 1440px) {
+  body main .block7 .block7_tittle {
+    margin-bottom: 60px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  body main .block7 .block7_tittle {
+    margin-bottom: calc(30px + 30 * ((100vw - 320px) / 1120));
+  }
+}
+body main .block7 .block7_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  place-items: center;
+}
+@media only screen and (max-width: 880px) {
+  body main .block7 .block7_content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-flow: column-reverse;
+            flex-flow: column-reverse;
+  }
+}
+body main .block7 .block7_content .block7_content_left {
+  width: 46%;
+}
+@media only screen and (max-width: 880px) {
+  body main .block7 .block7_content .block7_content_left {
+    max-width: 600px;
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+body main .block7 .block7_content .block7_content_left p {
+  font-family: Gilroy;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 160%;
+  color: #3F4054;
+}
+@media only screen and (min-width: 1440px) {
+  body main .block7 .block7_content .block7_content_left p {
+    font-size: 24px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  body main .block7 .block7_content .block7_content_left p {
+    font-size: calc(16px + 8 * ((100vw - 320px) / 1120));
+  }
+}
+body main .block7 .block7_content .block7_content_left p:not(:first-child) {
+  margin-top: 24px;
+}
+body main .block7 .block7_content .block7_content_right {
+  width: 45%;
+}
+@media only screen and (max-width: 880px) {
+  body main .block7 .block7_content .block7_content_right {
+    max-width: 400px;
+    width: 100%;
+  }
+}
+body main .block7 .block7_content .block7_content_right img {
+  width: 100%;
+}
+body main .block8 {
+  max-width: 1145px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 160px;
+  margin-bottom: 160px;
+}
+@media only screen and (min-width: 1440px) {
+  body main .block8 {
+    margin-bottom: 160px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  body main .block8 {
+    margin-bottom: calc(50px + 110 * ((100vw - 320px) / 1120));
+  }
+}
+@media only screen and (min-width: 1440px) {
+  body main .block8 {
+    margin-top: 160px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  body main .block8 {
+    margin-top: calc(50px + 110 * ((100vw - 320px) / 1120));
+  }
+}
+body main .block8 .block8_tittle {
+  text-align: center;
+  font-weight: bold;
+  font-size: 46px;
+  line-height: 120%;
+  color: #010325;
+  margin-bottom: 60px;
+}
+@media only screen and (min-width: 1440px) {
+  body main .block8 .block8_tittle {
+    font-size: 46px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  body main .block8 .block8_tittle {
+    font-size: calc(22px + 24 * ((100vw - 320px) / 1120));
+  }
+}
+@media only screen and (min-width: 1440px) {
+  body main .block8 .block8_tittle {
+    margin-bottom: 60px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  body main .block8 .block8_tittle {
+    margin-bottom: calc(30px + 30 * ((100vw - 320px) / 1120));
+  }
+}
+body main .block8 .block8_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+@media only screen and (max-width: 800px) {
+  body main .block8 .block8_content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+  }
+}
+body main .block8 .block8_content .active .block8_content_item_active {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+body main .block8 .block8_content .active img {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+body main .block8 .block8_content .block8_content_left {
+  width: 48%;
+}
+@media only screen and (max-width: 800px) {
+  body main .block8 .block8_content .block8_content_left {
+    width: 100%;
+  }
+}
+body main .block8 .block8_content .block8_content_right {
+  width: 48%;
+}
+@media only screen and (max-width: 800px) {
+  body main .block8 .block8_content .block8_content_right {
+    width: 100%;
+  }
+}
+body main .block8 .block8_content .block8_content_item {
+  width: 100%;
+}
+body main .block8 .block8_content .block8_content_item:not(:last-child) {
+  margin-bottom: 20px;
+}
+body main .block8 .block8_content .block8_content_item a {
+  cursor: pointer;
+}
+body main .block8 .block8_content .block8_content_item .block8_content_item_select {
+  width: 100%;
+  padding: 24px;
+  background: #F9F9F9;
+  border-radius: 8px 8px 0px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+@media only screen and (max-width: 600px) {
+  body main .block8 .block8_content .block8_content_item .block8_content_item_select {
+    padding: 15px;
+  }
+}
+body main .block8 .block8_content .block8_content_item .block8_content_item_select p {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 130%;
+  color: #010325;
+  max-width: 90%;
+}
+@media only screen and (min-width: 1440px) {
+  body main .block8 .block8_content .block8_content_item .block8_content_item_select p {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  body main .block8 .block8_content .block8_content_item .block8_content_item_select p {
+    font-size: calc(18px + 2 * ((100vw - 320px) / 1120));
+  }
+}
+body main .block8 .block8_content .block8_content_item .block8_content_item_select svg {
+  width: 13.5px;
+  height: 7.5px;
+}
+body main .block8 .block8_content .block8_content_item .block8_content_item_active {
+  display: none;
+  padding: 24px;
+  border: 2px solid #F5F4F4;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 0px 0px 8px 8px;
+}
+@media only screen and (max-width: 600px) {
+  body main .block8 .block8_content .block8_content_item .block8_content_item_active {
+    padding: 15px;
+  }
+}
+body main .block8 .block8_content .block8_content_item .block8_content_item_active p {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 160%;
+  /* or 29px */
+  color: #3F4054;
+}
+@media only screen and (min-width: 1440px) {
+  body main .block8 .block8_content .block8_content_item .block8_content_item_active p {
+    font-size: 18px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  body main .block8 .block8_content .block8_content_item .block8_content_item_active p {
+    font-size: calc(16px + 2 * ((100vw - 320px) / 1120));
+  }
+}
+body main .block9 {
+  max-width: 1145px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 160px;
+  margin-bottom: 160px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+@media only screen and (min-width: 1440px) {
+  body main .block9 {
+    margin-bottom: 160px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  body main .block9 {
+    margin-bottom: calc(50px + 110 * ((100vw - 320px) / 1120));
+  }
+}
+@media only screen and (min-width: 1440px) {
+  body main .block9 {
+    margin-top: 160px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  body main .block9 {
+    margin-top: calc(50px + 110 * ((100vw - 320px) / 1120));
+  }
+}
+@media only screen and (max-width: 700px) {
+  body main .block9 {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+  }
+}
+body main .block9 .block9_item {
+  width: 32%;
+  text-align: center;
+  place-content: baseline;
+  place-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+}
+@media only screen and (max-width: 700px) {
+  body main .block9 .block9_item {
+    width: 100%;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+body main .block9 .block9_item img {
+  width: 100%;
+}
+body main .block9 .block9_item p {
+  max-width: 330px;
+}
+body main .block9 .block9_item p:nth-of-type(1) {
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 120%;
+  color: #010325;
+  margin-top: 30px;
+  margin-bottom: 12px;
+}
+@media only screen and (min-width: 1440px) {
+  body main .block9 .block9_item p:nth-of-type(1) {
+    font-size: 28px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  body main .block9 .block9_item p:nth-of-type(1) {
+    font-size: calc(22px + 6 * ((100vw - 320px) / 1120));
+  }
+}
+@media only screen and (max-width: 700px) {
+  body main .block9 .block9_item p:nth-of-type(1) {
+    margin-top: 10px;
+  }
+}
+body main .block9 .block9_item p:nth-of-type(2) {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 140%;
+  /* or 28px */
+  color: #3F4054;
+}
+@media only screen and (min-width: 1440px) {
+  body main .block9 .block9_item p:nth-of-type(2) {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  body main .block9 .block9_item p:nth-of-type(2) {
+    font-size: calc(16px + 4 * ((100vw - 320px) / 1120));
+  }
+}
+@media only screen and (max-width: 700px) {
+  body main .block9 .block9_item p:nth-of-type(2) {
+    margin-bottom: 30px;
+  }
+}
+body footer {
+  background: #0E30B8;
+}
+body footer .footer_content {
+  max-width: 1145px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 40px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  place-items: center;
+}
+@media only screen and (max-width: 500px) {
+  body footer .footer_content .footer_content_logo {
+    height: 35px;
+  }
+}
+body footer .footer_content .footer_content_logo img {
+  height: 100%;
+}
+@media only screen and (max-width: 360px) {
+  body footer .footer_content .footer_content_logo {
+    height: 32px;
+  }
+}
+body footer .footer_content .footer_content_right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+body footer .footer_content .footer_content_right .footer_content_phone {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  place-items: center;
+  place-content: center;
+}
+body footer .footer_content .footer_content_right .footer_content_phone a {
+  margin-left: 6px;
+  font-weight: 700;
+  font-size: 24px;
+  color: white;
+}
+@media only screen and (min-width: 1440px) {
+  body footer .footer_content .footer_content_right .footer_content_phone a {
+    font-size: 24px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  body footer .footer_content .footer_content_right .footer_content_phone a {
+    font-size: calc(16px + 8 * ((100vw - 320px) / 1120));
+  }
+}
+body footer .footer_content .footer_content_right .footer_content_button {
+  margin-left: 32px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: uppercase;
+  padding: 12px 36px;
+  background: #FD622A;
+  border-radius: 8px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+body footer .footer_content .footer_content_right .footer_content_button:hover {
+  -webkit-box-shadow: 0px 7px 15px #fd622a;
+          box-shadow: 0px 7px 15px #fd622a;
+}
+@media only screen and (max-width: 700px) {
+  body footer .footer_content .footer_content_right .footer_content_button {
+    display: none;
+  }
+}
+.menu {
+  background: #FFB93D;
+  -webkit-box-shadow: 5px 15px 27px rgba(255, 185, 61, 0.3);
+          box-shadow: 5px 15px 27px rgba(255, 185, 61, 0.3);
+  border-radius: 90px;
+  display: none;
+}
+@media only screen and (max-width: 700px) {
+  .menu {
+    display: block;
+  }
+}
+
+html {
+  font-family: "Lato", sans-serif;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.msg {
+  font-family: "Pacifico", cursive;
+  font-size: 8vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  max-height: 100%;
+  max-width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #FEFEFE;
+  background-color: #1184F0;
+}
+
+.features {
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+.features li {
+  width: 100%;
+  text-align: center;
+  padding: 0.25em;
+}
+
+@media only screen and (max-width: 980px) {
+  content {
+    display: block;
+  }
+}
+@media only screen and (max-width: 600px) {
+  content {
+    display: block;
+  }
+}
+
+.drawer-list {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 500;
+  height: 100vh;
+  width: 400px;
+  -webkit-transform: translate(-100vw, 0);
+          transform: translate(-100vw, 0);
+  /* ie workaround */
+  -ms-transform: translatex(-100vw);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  pointer-events: none;
+  padding-top: 100px;
+  -webkit-transition: width 475ms ease-out, border-radius 0.8s 0.1s ease, -webkit-transform 450ms ease;
+  transition: width 475ms ease-out, border-radius 0.8s 0.1s ease, -webkit-transform 450ms ease;
+  transition: width 475ms ease-out, transform 450ms ease, border-radius 0.8s 0.1s ease;
+  transition: width 475ms ease-out, transform 450ms ease, border-radius 0.8s 0.1s ease, -webkit-transform 450ms ease;
+  border-bottom-right-radius: 100vw;
+  background-color: white;
+}
+@media (max-width: 980px) {
+  .drawer-list {
+    padding-top: 100px;
+  }
+}
+@media (max-width: 600px) {
+  .drawer-list {
+    padding-top: 60px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .drawer-list {
+    -webkit-transform: translate(-130vw, 0);
+            transform: translate(-130vw, 0);
+    -ms-transform: translatex(-130vw);
+  }
+}
+@media only screen and (max-width: 350px) {
+  .drawer-list {
+    -webkit-transform: translate(-140vw, 0);
+            transform: translate(-140vw, 0);
+    -ms-transform: translatex(-140vw);
+  }
+}
+.drawer-list ul {
+  z-index: 500;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  overflow-x: hidden;
+  pointer-events: auto;
+}
+.drawer-list li {
+  list-style: none;
+  text-transform: uppercase;
+  pointer-events: auto;
+  white-space: nowrap;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transform: translatex(100vw);
+          transform: translatex(100vw);
+  /* ie workaround */
+  -ms-transform: translatex(-100vw);
+}
+.drawer-list li:not(:last-child) {
+  margin-bottom: 25px;
+}
+@media only screen and (max-width: 600px) {
+  .drawer-list li:not(:last-child) {
+    margin-bottom: 15px;
+  }
+}
+.drawer-list li:last-child {
+  margin-bottom: 2em;
+}
+.drawer-list li a {
+  text-decoration: none;
+  color: black;
+  text-align: center;
+  display: block;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #999191;
+}
+@media only screen and (min-width: 1440px) {
+  .drawer-list li a {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  .drawer-list li a {
+    font-size: calc(17px + 3 * ((100vw - 320px) / 1120));
+  }
+}
+@media (min-width: 768px) {
+  .drawer-list li a {
+    text-align: center;
+  }
+}
+
+.drawer-list ul li a:focus ~ .drawer-list {
+  -webkit-transform: translatex(0);
+          transform: translatex(0);
+  border-bottom-right-radius: 0;
+}
+.drawer-list ul li a:focus ~ .drawer-list li {
+  -webkit-transform: translatex(0);
+          transform: translatex(0);
+}
+.drawer-list ul li a:focus ~ .drawer-list li:nth-child(1) {
+  -webkit-transition: -webkit-transform 4s 0.08 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 0.08 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 0.08 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 0.08 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 0.08 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+.drawer-list ul li a:focus ~ .drawer-list li:nth-child(2) {
+  -webkit-transition: -webkit-transform 4s 0.16 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 0.16 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 0.16 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 0.16 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 0.16 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+.drawer-list ul li a:focus ~ .drawer-list li:nth-child(3) {
+  -webkit-transition: -webkit-transform 4s 0.24 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 0.24 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 0.24 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 0.24 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 0.24 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+.drawer-list ul li a:focus ~ .drawer-list li:nth-child(4) {
+  -webkit-transition: -webkit-transform 4s 0.32 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 0.32 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 0.32 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 0.32 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 0.32 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+.drawer-list ul li a:focus ~ .drawer-list li:nth-child(5) {
+  -webkit-transition: -webkit-transform 4s 0.4 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 0.4 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 0.4 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 0.4 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 0.4 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+.drawer-list ul li a:focus ~ .drawer-list li:nth-child(6) {
+  -webkit-transition: -webkit-transform 4s 0.48 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 0.48 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 0.48 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 0.48 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 0.48 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+.drawer-list ul li a:focus ~ .drawer-list li:nth-child(7) {
+  -webkit-transition: -webkit-transform 4s 0.56 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 0.56 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 0.56 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 0.56 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 0.56 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+.drawer-list ul li a:focus ~ .drawer-list li:nth-child(8) {
+  -webkit-transition: -webkit-transform 4s 0.64 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 0.64 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 0.64 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 0.64 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 0.64 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+.drawer-list ul li a:focus ~ .drawer-list li:nth-child(9) {
+  -webkit-transition: -webkit-transform 4s 0.72 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 0.72 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 0.72 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 0.72 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 0.72 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+.drawer-list ul li a:focus ~ .drawer-list li:nth-child(10) {
+  -webkit-transition: -webkit-transform 4s 0.8 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 0.8 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 0.8 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 0.8 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 0.8 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+.drawer-list ul li a:focus ~ .drawer-list li:nth-child(11) {
+  -webkit-transition: -webkit-transform 4s 0.88 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 0.88 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 0.88 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 0.88 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 0.88 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+.drawer-list ul li a:focus ~ .drawer-list li:nth-child(12) {
+  -webkit-transition: -webkit-transform 4s 0.96 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 0.96 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 0.96 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 0.96 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 0.96 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+.drawer-list ul li a:focus ~ .drawer-list li:nth-child(13) {
+  -webkit-transition: -webkit-transform 4s 1.04 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 1.04 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 1.04 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 1.04 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 1.04 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+.drawer-list ul li a:focus ~ .drawer-list li:nth-child(14) {
+  -webkit-transition: -webkit-transform 4s 1.12 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 1.12 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 1.12 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 1.12 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 1.12 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+.drawer-list ul li a:focus ~ .drawer-list li:nth-child(15) {
+  -webkit-transition: -webkit-transform 4s 1.2 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 1.2 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 1.2 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 1.2 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 1.2 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+.drawer-list ul li a:focus ~ .drawer-list li:nth-child(16) {
+  -webkit-transition: -webkit-transform 4s 1.28 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 1.28 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 1.28 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 1.28 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 1.28 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+.drawer-list ul li a:focus ~ .drawer-list li:nth-child(17) {
+  -webkit-transition: -webkit-transform 4s 1.36 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 1.36 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 1.36 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 1.36 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 1.36 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+.drawer-list ul li a:focus ~ .drawer-list li:nth-child(18) {
+  -webkit-transition: -webkit-transform 4s 1.44 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 1.44 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 1.44 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 1.44 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 1.44 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+.drawer-list ul li a:focus ~ .drawer-list li:nth-child(19) {
+  -webkit-transition: -webkit-transform 4s 1.52 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 1.52 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 1.52 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 1.52 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 1.52 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+.drawer-list ul li a:focus ~ .drawer-list li:nth-child(20) {
+  -webkit-transition: -webkit-transform 4s 1.6 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 1.6 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 1.6 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 1.6 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 1.6 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+.drawer-list ul li a:focus ~ .drawer-list li:nth-child(21) {
+  -webkit-transition: -webkit-transform 4s 1.68 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 1.68 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 1.68 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 1.68 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 1.68 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+.drawer-list ul li a:focus ~ .drawer-list li:nth-child(22) {
+  -webkit-transition: -webkit-transform 4s 1.76 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 1.76 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 1.76 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 1.76 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 1.76 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+.drawer-list ul li a:focus ~ .drawer-list li:nth-child(23) {
+  -webkit-transition: -webkit-transform 4s 1.84 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 1.84 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 1.84 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 1.84 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 1.84 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+.drawer-list ul li a:focus ~ .drawer-list li:nth-child(24) {
+  -webkit-transition: -webkit-transform 4s 1.92 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 1.92 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 1.92 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 1.92 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 1.92 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+.drawer-list ul li a:focus ~ .drawer-list li:nth-child(25) {
+  -webkit-transition: -webkit-transform 4s 2 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 2 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 2 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 2 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 2 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+.drawer-list ul li a:focus ~ .drawer-list li:nth-child(26) {
+  -webkit-transition: -webkit-transform 4s 2.08 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 2.08 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 2.08 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 2.08 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 2.08 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+.drawer-list ul li a:focus ~ .drawer-list li:nth-child(27) {
+  -webkit-transition: -webkit-transform 4s 2.16 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 2.16 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 2.16 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 2.16 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 2.16 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+.drawer-list ul li a:focus ~ .drawer-list li:nth-child(28) {
+  -webkit-transition: -webkit-transform 4s 2.24 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 2.24 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 2.24 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 2.24 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 2.24 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+.drawer-list ul li a:focus ~ .drawer-list li:nth-child(29) {
+  -webkit-transition: -webkit-transform 4s 2.32 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 2.32 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 2.32 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 2.32 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 2.32 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+.drawer-list ul li a:focus ~ .drawer-list li:nth-child(30) {
+  -webkit-transition: -webkit-transform 4s 2.4 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 2.4 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 2.4 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 2.4 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 2.4 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+.drawer-list ul li a:focus ~ .drawer-list li:nth-child(31) {
+  -webkit-transition: -webkit-transform 4s 2.48 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 2.48 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 2.48 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 2.48 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 2.48 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+.drawer-list ul li a:focus ~ .drawer-list li:nth-child(32) {
+  -webkit-transition: -webkit-transform 4s 2.56 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 2.56 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 2.56 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 2.56 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 2.56 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+.drawer-list ul li a:focus ~ .drawer-list li:nth-child(33) {
+  -webkit-transition: -webkit-transform 4s 2.64 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 2.64 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 2.64 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 2.64 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 2.64 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+.drawer-list ul li a:focus ~ .drawer-list li:nth-child(34) {
+  -webkit-transition: -webkit-transform 4s 2.72 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 2.72 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 2.72 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 2.72 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 2.72 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+.drawer-list ul li a:focus ~ .drawer-list li:nth-child(35) {
+  -webkit-transition: -webkit-transform 4s 2.8 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 2.8 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 2.8 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 2.8 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 2.8 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+.drawer-list ul li a:focus ~ .drawer-list li:nth-child(36) {
+  -webkit-transition: -webkit-transform 4s 2.88 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 2.88 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 2.88 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 2.88 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 2.88 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+.drawer-list ul li a:focus ~ .drawer-list li:nth-child(37) {
+  -webkit-transition: -webkit-transform 4s 2.96 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 2.96 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 2.96 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 2.96 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 2.96 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+.drawer-list ul li a:focus ~ .drawer-list li:nth-child(38) {
+  -webkit-transition: -webkit-transform 4s 3.04 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 3.04 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 3.04 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 3.04 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 3.04 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+.drawer-list ul li a:focus ~ .drawer-list li:nth-child(39) {
+  -webkit-transition: -webkit-transform 4s 3.12 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 3.12 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 3.12 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 3.12 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 3.12 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+.drawer-list ul li a:focus ~ .drawer-list li:nth-child(40) {
+  -webkit-transition: -webkit-transform 4s 3.2 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 3.2 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 3.2 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 3.2 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 3.2 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+.drawer-list ul li a:focus ~ .drawer-list li:nth-child(41) {
+  -webkit-transition: -webkit-transform 4s 3.28 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 3.28 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 3.28 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 3.28 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 3.28 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+.drawer-list ul li a:focus ~ .drawer-list li:nth-child(42) {
+  -webkit-transition: -webkit-transform 4s 3.36 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 3.36 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 3.36 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 3.36 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 3.36 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+.drawer-list ul li a:focus ~ .drawer-list li:nth-child(43) {
+  -webkit-transition: -webkit-transform 4s 3.44 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 3.44 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 3.44 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 3.44 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 3.44 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+.drawer-list ul li a:focus ~ .drawer-list li:nth-child(44) {
+  -webkit-transition: -webkit-transform 4s 3.52 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 3.52 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 3.52 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 3.52 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 3.52 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+.drawer-list ul li a:focus ~ .drawer-list li:nth-child(45) {
+  -webkit-transition: -webkit-transform 4s 3.6 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 3.6 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 3.6 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 3.6 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 3.6 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+.drawer-list ul li a:focus ~ .drawer-list li:nth-child(46) {
+  -webkit-transition: -webkit-transform 4s 3.68 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 3.68 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 3.68 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 3.68 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 3.68 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+.drawer-list ul li a:focus ~ .drawer-list li:nth-child(47) {
+  -webkit-transition: -webkit-transform 4s 3.76 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 3.76 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 3.76 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 3.76 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 3.76 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+.drawer-list ul li a:focus ~ .drawer-list li:nth-child(48) {
+  -webkit-transition: -webkit-transform 4s 3.84 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 3.84 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 3.84 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 3.84 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 3.84 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+.drawer-list ul li a:focus ~ .drawer-list li:nth-child(49) {
+  -webkit-transition: -webkit-transform 4s 3.92 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 3.92 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 3.92 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 3.92 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 3.92 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+.drawer-list ul li a:focus ~ .drawer-list li:nth-child(50) {
+  -webkit-transition: -webkit-transform 4s 4 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 4 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 4 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 4 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 4 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+.drawer-list ul li a:focus ~ .drawer-list li a {
+  padding-right: 15px;
+}
+
+input.hamburger {
+  display: none;
+}
+input.hamburger:checked ~ .drawer-list {
+  -webkit-transform: translatex(0);
+          transform: translatex(0);
+  border-bottom-right-radius: 0;
+}
+@media only screen and (max-width: 500px) {
+  input.hamburger:checked ~ .drawer-list {
+    -webkit-transform: translatex(-30px);
+            transform: translatex(-30px);
+  }
+}
+@media only screen and (max-width: 350px) {
+  input.hamburger:checked ~ .drawer-list {
+    -webkit-transform: translatex(-50px);
+            transform: translatex(-50px);
+  }
+}
+input.hamburger:checked ~ .drawer-list li {
+  -webkit-transform: translatex(0);
+          transform: translatex(0);
+}
+input.hamburger:checked ~ .drawer-list li:nth-child(1) {
+  -webkit-transition: -webkit-transform 4s 0.08 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 0.08 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 0.08 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 0.08 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 0.08 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .drawer-list li:nth-child(2) {
+  -webkit-transition: -webkit-transform 4s 0.16 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 0.16 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 0.16 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 0.16 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 0.16 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .drawer-list li:nth-child(3) {
+  -webkit-transition: -webkit-transform 4s 0.24 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 0.24 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 0.24 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 0.24 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 0.24 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .drawer-list li:nth-child(4) {
+  -webkit-transition: -webkit-transform 4s 0.32 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 0.32 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 0.32 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 0.32 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 0.32 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .drawer-list li:nth-child(5) {
+  -webkit-transition: -webkit-transform 4s 0.4 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 0.4 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 0.4 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 0.4 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 0.4 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .drawer-list li:nth-child(6) {
+  -webkit-transition: -webkit-transform 4s 0.48 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 0.48 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 0.48 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 0.48 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 0.48 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .drawer-list li:nth-child(7) {
+  -webkit-transition: -webkit-transform 4s 0.56 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 0.56 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 0.56 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 0.56 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 0.56 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .drawer-list li:nth-child(8) {
+  -webkit-transition: -webkit-transform 4s 0.64 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 0.64 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 0.64 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 0.64 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 0.64 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .drawer-list li:nth-child(9) {
+  -webkit-transition: -webkit-transform 4s 0.72 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 0.72 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 0.72 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 0.72 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 0.72 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .drawer-list li:nth-child(10) {
+  -webkit-transition: -webkit-transform 4s 0.8 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 0.8 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 0.8 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 0.8 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 0.8 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .drawer-list li:nth-child(11) {
+  -webkit-transition: -webkit-transform 4s 0.88 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 0.88 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 0.88 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 0.88 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 0.88 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .drawer-list li:nth-child(12) {
+  -webkit-transition: -webkit-transform 4s 0.96 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 0.96 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 0.96 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 0.96 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 0.96 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .drawer-list li:nth-child(13) {
+  -webkit-transition: -webkit-transform 4s 1.04 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 1.04 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 1.04 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 1.04 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 1.04 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .drawer-list li:nth-child(14) {
+  -webkit-transition: -webkit-transform 4s 1.12 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 1.12 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 1.12 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 1.12 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 1.12 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .drawer-list li:nth-child(15) {
+  -webkit-transition: -webkit-transform 4s 1.2 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 1.2 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 1.2 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 1.2 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 1.2 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .drawer-list li:nth-child(16) {
+  -webkit-transition: -webkit-transform 4s 1.28 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 1.28 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 1.28 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 1.28 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 1.28 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .drawer-list li:nth-child(17) {
+  -webkit-transition: -webkit-transform 4s 1.36 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 1.36 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 1.36 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 1.36 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 1.36 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .drawer-list li:nth-child(18) {
+  -webkit-transition: -webkit-transform 4s 1.44 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 1.44 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 1.44 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 1.44 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 1.44 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .drawer-list li:nth-child(19) {
+  -webkit-transition: -webkit-transform 4s 1.52 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 1.52 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 1.52 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 1.52 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 1.52 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .drawer-list li:nth-child(20) {
+  -webkit-transition: -webkit-transform 4s 1.6 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 1.6 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 1.6 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 1.6 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 1.6 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .drawer-list li:nth-child(21) {
+  -webkit-transition: -webkit-transform 4s 1.68 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 1.68 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 1.68 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 1.68 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 1.68 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .drawer-list li:nth-child(22) {
+  -webkit-transition: -webkit-transform 4s 1.76 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 1.76 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 1.76 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 1.76 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 1.76 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .drawer-list li:nth-child(23) {
+  -webkit-transition: -webkit-transform 4s 1.84 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 1.84 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 1.84 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 1.84 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 1.84 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .drawer-list li:nth-child(24) {
+  -webkit-transition: -webkit-transform 4s 1.92 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 1.92 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 1.92 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 1.92 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 1.92 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .drawer-list li:nth-child(25) {
+  -webkit-transition: -webkit-transform 4s 2 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 2 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 2 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 2 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 2 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .drawer-list li:nth-child(26) {
+  -webkit-transition: -webkit-transform 4s 2.08 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 2.08 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 2.08 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 2.08 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 2.08 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .drawer-list li:nth-child(27) {
+  -webkit-transition: -webkit-transform 4s 2.16 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 2.16 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 2.16 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 2.16 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 2.16 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .drawer-list li:nth-child(28) {
+  -webkit-transition: -webkit-transform 4s 2.24 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 2.24 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 2.24 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 2.24 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 2.24 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .drawer-list li:nth-child(29) {
+  -webkit-transition: -webkit-transform 4s 2.32 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 2.32 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 2.32 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 2.32 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 2.32 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .drawer-list li:nth-child(30) {
+  -webkit-transition: -webkit-transform 4s 2.4 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 2.4 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 2.4 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 2.4 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 2.4 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .drawer-list li:nth-child(31) {
+  -webkit-transition: -webkit-transform 4s 2.48 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 2.48 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 2.48 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 2.48 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 2.48 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .drawer-list li:nth-child(32) {
+  -webkit-transition: -webkit-transform 4s 2.56 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 2.56 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 2.56 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 2.56 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 2.56 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .drawer-list li:nth-child(33) {
+  -webkit-transition: -webkit-transform 4s 2.64 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 2.64 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 2.64 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 2.64 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 2.64 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .drawer-list li:nth-child(34) {
+  -webkit-transition: -webkit-transform 4s 2.72 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 2.72 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 2.72 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 2.72 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 2.72 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .drawer-list li:nth-child(35) {
+  -webkit-transition: -webkit-transform 4s 2.8 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 2.8 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 2.8 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 2.8 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 2.8 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .drawer-list li:nth-child(36) {
+  -webkit-transition: -webkit-transform 4s 2.88 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 2.88 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 2.88 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 2.88 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 2.88 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .drawer-list li:nth-child(37) {
+  -webkit-transition: -webkit-transform 4s 2.96 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 2.96 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 2.96 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 2.96 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 2.96 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .drawer-list li:nth-child(38) {
+  -webkit-transition: -webkit-transform 4s 3.04 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 3.04 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 3.04 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 3.04 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 3.04 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .drawer-list li:nth-child(39) {
+  -webkit-transition: -webkit-transform 4s 3.12 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 3.12 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 3.12 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 3.12 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 3.12 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .drawer-list li:nth-child(40) {
+  -webkit-transition: -webkit-transform 4s 3.2 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 3.2 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 3.2 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 3.2 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 3.2 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .drawer-list li:nth-child(41) {
+  -webkit-transition: -webkit-transform 4s 3.28 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 3.28 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 3.28 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 3.28 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 3.28 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .drawer-list li:nth-child(42) {
+  -webkit-transition: -webkit-transform 4s 3.36 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 3.36 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 3.36 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 3.36 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 3.36 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .drawer-list li:nth-child(43) {
+  -webkit-transition: -webkit-transform 4s 3.44 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 3.44 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 3.44 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 3.44 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 3.44 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .drawer-list li:nth-child(44) {
+  -webkit-transition: -webkit-transform 4s 3.52 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 3.52 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 3.52 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 3.52 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 3.52 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .drawer-list li:nth-child(45) {
+  -webkit-transition: -webkit-transform 4s 3.6 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 3.6 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 3.6 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 3.6 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 3.6 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .drawer-list li:nth-child(46) {
+  -webkit-transition: -webkit-transform 4s 3.68 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 3.68 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 3.68 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 3.68 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 3.68 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .drawer-list li:nth-child(47) {
+  -webkit-transition: -webkit-transform 4s 3.76 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 3.76 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 3.76 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 3.76 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 3.76 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .drawer-list li:nth-child(48) {
+  -webkit-transition: -webkit-transform 4s 3.84 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 3.84 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 3.84 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 3.84 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 3.84 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .drawer-list li:nth-child(49) {
+  -webkit-transition: -webkit-transform 4s 3.92 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 3.92 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 3.92 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 3.92 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 3.92 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .drawer-list li:nth-child(50) {
+  -webkit-transition: -webkit-transform 4s 4 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: -webkit-transform 4s 4 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 4 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+  transition: transform 4s 4 cubic-bezier(0.29, 1.4, 0.44, 0.96), -webkit-transform 4s 4 cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .drawer-list li a {
+  padding-right: 15px;
+}
+input.hamburger:checked ~ label {
+  position: fixed;
+}
+input.hamburger:checked ~ label > i {
+  background-color: transparent;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+input.hamburger:checked ~ label > i:before {
+  -webkit-transform: translate(-50%, -50%) rotate(315deg);
+          transform: translate(-50%, -50%) rotate(315deg);
+}
+input.hamburger:checked ~ label > i:after {
+  -webkit-transform: translate(-50%, -50%) rotate(-315deg);
+          transform: translate(-50%, -50%) rotate(-315deg);
+}
+input.hamburger:checked ~ label close {
+  color: #FEFEFE;
+  width: 100%;
+}
+input.hamburger:checked ~ label open {
+  color: rgba(0, 0, 0, 0);
+  width: 0;
+}
+
+label.hamburger {
+  z-index: 9999;
+  position: relative;
+  display: block;
+  height: 50px;
+  width: 50px;
+  background: #FFB93D;
+  -webkit-box-shadow: 5px 15px 27px rgba(255, 185, 61, 0.3);
+          box-shadow: 5px 15px 27px rgba(255, 185, 61, 0.3);
+  border-radius: 90px;
+  padding: 10px;
+}
+label.hamburger:hover {
+  cursor: pointer;
+}
+label.hamburger text close,
+label.hamburger text open {
+  text-transform: uppercase;
+  font-size: 0.8em;
+  align-text: center;
+  position: absolute;
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
+  text-align: center;
+  overflow: hidden;
+  -webkit-transition: width 0.25s 0.35s, color 0.45s 0.35s;
+  transition: width 0.25s 0.35s, color 0.45s 0.35s;
+}
+label.hamburger text close {
+  color: white;
+  right: 0;
+  width: 0;
+}
+label.hamburger text open {
+  color: white;
+  width: 100%;
+}
+label.hamburger > i {
+  position: absolute;
+  width: 22px;
+  height: 4px;
+  top: 50%;
+  left: 14px;
+  pointer-events: auto;
+  -webkit-transition-duration: 0.35s;
+          transition-duration: 0.35s;
+  -webkit-transition-delay: 0.35s;
+          transition-delay: 0.35s;
+  background-color: white;
+}
+label.hamburger > i:after, label.hamburger > i:before {
+  position: absolute;
+  display: block;
+  width: 14px;
+  height: 4px;
+  left: 10px;
+  background-color: white;
+  content: "";
+  -webkit-transition: -webkit-transform 0.35s;
+  transition: -webkit-transform 0.35s;
+  transition: transform 0.35s;
+  transition: transform 0.35s, -webkit-transform 0.35s;
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+}
+label.hamburger > i:before {
+  -webkit-transform: translate(-10px, -10px);
+          transform: translate(-10px, -10px);
+}
+label.hamburger > i:after {
+  -webkit-transform: translate(-10px, 10px);
+          transform: translate(-10px, 10px);
+}
+
+label.hamburger {
+  position: absolute;
+  top: 31px;
+  left: 36px;
+}
+@media only screen and (max-width: 1340px) {
+  label.hamburger {
+    left: 15px;
+  }
+}
+@media only screen and (max-width: 980px) {
+  label.hamburger {
+    display: block;
+  }
+}
+@media only screen and (max-width: 900px) {
+  label.hamburger {
+    top: 8px;
+  }
+}
+.icon {
+  display: inline-block;
+  width: 5vw;
+  height: 4vw;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
